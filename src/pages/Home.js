@@ -1,16 +1,14 @@
-import NavBar from "../Components/NavBar"
-
+import '../index.css'
 const HomePage = () => {
-	return (
-		<div>
-            <NavBar/>
-			<h1>
-                Home Page
-            </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices aliquam blandit. Aliquam in ante nec lorem commodo condimentum in non ex. Praesent in sapien malesuada, imperdiet lacus in, feugiat metus. Phasellus lobortis cursus mattis. Vivamus venenatis nibh et arcu consequat auctor. Sed ac facilisis arcu, a molestie tellus. Integer consequat dolor dui, eget fringilla diam placerat eget. Donec a ultricies elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-            </p>
-		</div>
-	)
+    return (
+        <div>
+
+            <div className="homePage">
+                <h1 className="homeH1">Home Page</h1>
+                <p className="homeP">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+        </div>
+    )
 }
 
-export default HomePage
+export default HomePage;

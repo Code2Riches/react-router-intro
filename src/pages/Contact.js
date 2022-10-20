@@ -1,28 +1,52 @@
-import NavBar from "../Components/NavBar";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
+import { useState } from "react"
 
+const ContactPage = () => {
 
-
-const Contact = () => {
+    const [signupList, handleAddSignup] = useOutletContext();
 
     const navigate = useNavigate();
 
-  return (
-    <div>
-        <h1>Contact:</h1>
-        <input type="text"></input>
-        <label>First Name: </label><br></br>
-        <input type="text"></input>
-        <label>Last Name: </label><br></br>
-        <input type="text"></input>
-        <label>Email: </label><br></br><br></br>
-        
-        <button onClick={() => {navigate("/")}}>
-        Submit
-        </button>
-   </div>
-  );
-};
+    const redirectUserFunction = () => {
+        navigate("/")
+    }
 
-export default Contact;
+    const [firstname, setFirstName] = useState("");
+    const [lastname, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+
+
+    return (
+        <div>
+
+            <div className="contactPage">
+                <div className="contactItems">
+                    <h1>Contact Me !</h1>
+
+                    <input type="text" placeholder="First Name" onChange={(e) => { setFirstName(e.target.value) }} />
+                    <br />
+
+
+                    <input type="text" placeholder="Last Name" onChange={(e) => { setLastName(e.target.value) }} />
+                    <br />
+
+
+                    <input type="email" placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
+                    <br />
+                    <br />
+
+                    <button onClick={(e) => {
+                        if (firstname === "" || lastname === "" || email === "") {
+                            alert("Input fields must be filled in order to move on")
+                        }
+                        else {
+                            redirectUserFunction()
+                        }
+                    }}>Submit</button>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default ContactPage
